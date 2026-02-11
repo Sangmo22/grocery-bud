@@ -13,10 +13,12 @@ export function createForm() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const value = input.value.trim();
-    if (value) {
-      addItem(value);
-      input.value = "";
+    if (!value) {
+      alert("Please enter a valid item name.");
+      return;
     }
+    addItem(value);
+    input.value = "";
   });
   return form;
 }

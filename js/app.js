@@ -36,10 +36,17 @@ export function deleteItem(id) {
 
 export function addItem(name) {
   const newItem = {
-    id: Date.now().toString(),
+    id: generateUniqueId(),
     name,
     completed: false,
   };
   items = [...items, newItem];
   render();
+  setTimeout(() => {
+    alert("Item added successfully!");
+  }, 0);
+}
+
+function generateUniqueId() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }

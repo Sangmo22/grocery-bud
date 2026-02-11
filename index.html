@@ -11,61 +11,21 @@
     />
     <link rel="stylesheet" href="css/single-item.css" />
     <link rel="stylesheet" href="css/items.css" />
+
+    <link rel="stylesheet" href="css/form.css" />
   </head>
   <body>
     <section class="container">
-      <h1>Grocery Bud</h1>
       <div id="app">
-        <div class="items">
-          <div class="single-item">
-            <input type="checkbox" checked />
-            <p style="text-decoration: line-through">Daal</p>
-            <button class="btn icon-btn edit-btn" type="button">
-              <i class="fa-regular fa-pen-to-square"></i>
-            </button>
-            <button class="btn icon-btn remove-btn" type="button">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
+        <form>
+          <h1>Grocery Bud</h1>
+          <div class="form-control">
+            <input type="text" class="form-input" placeholder="e.g. garlics" />
+            <button type="submit" class="btn">Add Item</button>
           </div>
-
-          <div class="single-item">
-            <input type="checkbox" checked />
-            <p style="text-decoration: line-through">Tomato</p>
-            <button class="btn icon-btn edit-btn" type="button">
-              <i class="fa-regular fa-pen-to-square"></i>
-            </button>
-            <button class="btn icon-btn remove-btn" type="button">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-
-          <div class="single-item">
-            <input type="checkbox" />
-            <p style="text-decoration: none">Potato</p>
-            <button class="btn icon-btn edit-btn" type="button">
-              <i class="fa-regular fa-pen-to-square"></i>
-            </button>
-            <button class="btn icon-btn remove-btn" type="button">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-
-          <div class="single-item">
-            <input type="checkbox" />
-            <p style="text-decoration: none">Onion</p>
-            <button class="btn icon-btn edit-btn" type="button">
-              <i class="fa-regular fa-pen-to-square"></i>
-            </button>
-            <button class="btn icon-btn remove-btn" type="button">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-        </div>
+        </form>
       </div>
     </section>
-    <script type="module" src="js/data.js"></script>
-    <script type="module" src="js/single-item.js"></script>
     <script type="module" src="js/app.js"></script>
-    <script type="module" src="js/items.js"></script>
   </body>
 </html>

@@ -16,9 +16,9 @@ body {
 .container {
   max-width: 500px;
   margin: 50px auto;
-  background-color: #c8e8f0;
+  background: linear-gradient(135deg, #e42d6a 0%, #51adc7 100%);
   padding: 20px;
   border-radius: 5px;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 28px rgba(245, 231, 231, 0.25);
 }

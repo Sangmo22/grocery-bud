@@ -3,8 +3,26 @@ import { groceryItems } from "./data.js";
 import { createItems } from "./items.js";
 import { createForm } from "./form.js";
 
-let items = groceryItems;
+const STORAGE_KEY = "grocery-items";
+let items = loadItems();
 let editId = null;
+
+function loadItems() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      return groceryItems;
+    }
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : groceryItems;
+  } catch (error) {
+    return groceryItems;
+  }
+}
+
+function saveItems() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+}
 
 function render() {
   const app = document.getElementById("app");
@@ -25,11 +43,13 @@ export function editCompleted(id) {
     }
     return item;
   });
+  saveItems();
   render();
 }
 
 export function deleteItem(id) {
   items = items.filter((item) => item.id !== id);
+  saveItems();
   render();
   setTimeout(() => {
     alert("Item deleted successfully!");
@@ -43,6 +63,7 @@ export function addItem(name) {
     completed: false,
   };
   items = [...items, newItem];
+  saveItems();
   render();
   setTimeout(() => {
     alert("Item added successfully!");
@@ -68,6 +89,7 @@ export function updateItem(id, name) {
     }
     return item;
   });
+  saveItems();
   editId = null;
   render();
   setTimeout(() => {

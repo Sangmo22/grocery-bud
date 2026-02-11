@@ -3,13 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocery List</title>
+    <title>Grocery Bud</title>
     <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
   <body>
     <section class="container">
-      <h1>Grocery List</h1>
-      <div id="app"></div>
+      <h1>Grocery Bud</h1>
+      <div id="app">
+        <div class="items">
+          <div class="single-item">
+            <input type="checkbox" checked />
+            <p style="text-decoration: line-through">Daal</p>
+            <button class="btn icon-btn edit-btn" type="button">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="btn icon-btn remove-btn" type="button">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
 </html>

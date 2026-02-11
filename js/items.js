@@ -1,4 +1,4 @@
-import { createSingleItem } from "./single-item";
+import { createSingleItem } from "./single-item.js";
 
 export function createItems(items) {
   const div = document.createElement("div");

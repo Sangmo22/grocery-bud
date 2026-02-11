@@ -12,3 +12,13 @@ function render() {
 }
 
 render();
+
+export function editCompleted(id) {
+  items = items.map((item) => {
+    if (item.id === id) {
+      return { ...item, checked: !item.checked };
+    }
+    return item;
+  });
+  render();
+}

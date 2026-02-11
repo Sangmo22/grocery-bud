@@ -4,11 +4,13 @@ import { createItems } from "./items.js";
 import { createForm } from "./form.js";
 
 let items = groceryItems;
+let editId = null;
 
 function render() {
   const app = document.getElementById("app");
   app.innerHTML = "";
-  const form = createForm();
+  const editItem = items.find((item) => item.id === editId) || null;
+  const form = createForm(editItem);
   app.appendChild(form);
   const itemsDiv = createItems(items);
   app.appendChild(itemsDiv);
@@ -44,6 +46,32 @@ export function addItem(name) {
   render();
   setTimeout(() => {
     alert("Item added successfully!");
+  }, 0);
+}
+
+export function startEdit(id) {
+  editId = id;
+  render();
+  setTimeout(() => {
+    const input = document.querySelector(".form-input");
+    if (input) {
+      input.focus();
+      input.select();
+    }
+  }, 0);
+}
+
+export function updateItem(id, name) {
+  items = items.map((item) => {
+    if (item.id === id) {
+      return { ...item, name };
+    }
+    return item;
+  });
+  editId = null;
+  render();
+  setTimeout(() => {
+    alert("Item updated successfully!");
   }, 0);
 }
 function generateId() {

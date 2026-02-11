@@ -50,3 +50,30 @@ export function addItem(name) {
 function generateUniqueId() {
   return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
+
+let editId = null;
+
+function render() {
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+  const form = createForm();
+  app.appendChild(form);
+  const itemsDiv = createItems(items);
+  app.appendChild(itemsDiv);
+}
+
+render();
+
+export function updareItemName(newName) {
+  items = items.map((item) => {
+    if (item.id === editId) {
+      return { ...item, name: newName };
+    }
+    return item;
+  });
+  editId = null;
+  render();
+  setTimeout(() => {
+    alert("Item updated successfully!");
+  }, 0);
+}

@@ -3,7 +3,7 @@ import { addItem, updateItem } from "./app.js";
 export function createForm(editItem) {
   const form = document.createElement("form");
   form.innerHTML = `
-    <h1>Grocery Bud</h1>
+    <h1><i class="fa-solid fa-cart-shopping title-icon" aria-hidden="true"></i>Grocery Bud</h1>
     <div class="form-control">
       <input type="text" class="form-input" placeholder="e.g. garlics" value="${editItem ? editItem.name : ""}" />
       <button type="submit" class="btn">${editItem ? "Update Item" : "Add Item"}</button>

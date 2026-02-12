@@ -61,6 +61,7 @@ export function addItem(name) {
     id: generateId(),
     name,
     completed: false,
+    createdAt: new Date().toISOString(),
   };
   items = [...items, newItem];
   saveItems();

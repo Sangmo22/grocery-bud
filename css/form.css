@@ -3,6 +3,10 @@ form h1 {
   margin-bottom: 20px;
 }
 
+form h1 .title-icon {
+  margin-right: 0.5rem;
+}
+
 .form-control {
   display: flex;
   justify-content: center;

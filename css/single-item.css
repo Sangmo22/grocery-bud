@@ -5,8 +5,19 @@
   align-items: center;
 }
 
+.single-item .item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .single-item p {
   text-transform: capitalize;
+}
+
+.single-item .item-time {
+  color: #2f2f2f;
+  font-size: 0.8rem;
 }
 .single-item input[type="checkbox"] {
   cursor: pointer;
